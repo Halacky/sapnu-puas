@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
@@ -18,7 +18,7 @@ namespace TestBot
             try
             {
                 bot = new TelegramBotClient("874202219:AAGGR--lbKolja2R6hweapuysBfQoqbq8gs"); //Указываем токен который выдал FatherBot
-                Commands.bot = bot; 
+                Commands.bot = bot;
                 Console.WriteLine("Бот запущен!");
                 bot.OnMessage += Bot_OnMessageAsync;
                 //----------------------
@@ -43,7 +43,7 @@ namespace TestBot
 
         private static async void Bot_OnMessageAsync(object sender, Telegram.Bot.Args.MessageEventArgs e)//Обртаботка текста из чата
         {
-            Console.WriteLine("Message! From: " + e.Message.From.Id + "\nText: " + e.Message.Text); 
+            Console.WriteLine("Message! From: " + e.Message.From.Id + "\nText: " + e.Message.Text);
             var message = e.Message; //сообщение из чата
             var id = message.From.Id; //id пользователя
             if (Commands.containsId(id)) //Если id уже существует в словаре "запросов" 
@@ -52,7 +52,7 @@ namespace TestBot
                 {
                     case "full name":
                         string[] fullName = message.Text.Split();
-                        await DataBase.addUserData(id,DataBase.dataTypes.last_name,fullName[0]);
+                        await DataBase.addUserData(id, DataBase.dataTypes.last_name, fullName[0]);
                         Thread.Sleep(1000);
                         await DataBase.addUserData(id, DataBase.dataTypes.first_name, fullName[1]);
                         Thread.Sleep(1000);
@@ -105,7 +105,7 @@ namespace TestBot
                 {
                     string textMes = message.Text.ToLower(); //распознаем команду попутно приводим вводимый текст к нижнему регистру
 
-                    if (textMes == "/start") 
+                    if (textMes == "/start")
                     {
                         Commands.regNewUser(id);
                         Commands.hello(id);
@@ -137,6 +137,16 @@ namespace TestBot
                         Commands.timetable(id);
                         flag = true;
                     }
+                    if (textMes == "статус справок")
+                    {
+                        Commands.status(id);
+                        flag = true;
+                    }
+                    if (textMes == "мероприятия")
+                    {
+                        Commands.events(id);
+                        flag = true;
+                    }
                     // inline buttons
                     if (textMes == "справка") //Если ввели слово справка создаем инлайн кнопки с вариантами
                     {
@@ -157,9 +167,9 @@ namespace TestBot
                         await bot.SendTextMessageAsync(message.Chat.Id, "Какую тебе нужно справку?", replyMarkup: keyboard);
                         flag = true;
                     }
-                   
-                    
-                    if (!flag||textMes=="/buttons")
+
+
+                    if (!flag || textMes == "/buttons")
                     {
                         var keyboard = new ReplyKeyboardMarkup
                         {
@@ -187,10 +197,9 @@ namespace TestBot
                                             },
                             ResizeKeyboard = true
                         };
-                        };
-
                         await bot.SendTextMessageAsync(message.Chat.Id, "Вот тебе кнопки!", replyMarkup: keyboard);
                     }
+                    
                 }
             }
         }
