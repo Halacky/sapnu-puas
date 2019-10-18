@@ -1,0 +1,213 @@
+* { padding: 0; margin: 0; }
+body
+{   background-color: #f2f2f2;
+	font-family: 'Ubuntu Condensed', sans-serif; }
+	a{color: #f2cc90;}
+.logo {float: left; margin-left: 18%;max-width: 50px;
+	max-height: 50px;}
+.block11 { 
+    /*background: url(../images/1.jpg)no-repeat center top / cover;
+	height: 50vh;*/
+}
+/*вернеее меню и боковое */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+.menutop, .menub {
+  opacity: 0.7;
+  padding: 10px 0 5px;
+  text-align: center;
+  background: black;
+  position: fixed;
+  width: 100%;
+  z-index: 1; 
+}
+.menub { 
+width: 19%; 
+position: relative;
+text-align: left;
+width: 19%;
+background: black;
+margin-top: 35px;
+float: right;
+}
+.menutop li, .menub li {display: inline-block;}
+.menutop li:after,
+.menub li:after
+ {  content: "|";
+  color: #606060;
+  vertical-align:top;}
+.menub li:after {content: none;}
+.menutop li:last-child:after {content: none;}
+.menutop a,
+.menub a {  
+	text-decoration: none;
+    letter-spacing: 2px;
+ 	position: relative;
+ 	padding-bottom: 20px;
+ 	margin: 0 34px 0 30px;
+ 	font-size: 17px;
+ 	text-transform: uppercase;
+  	transition: color .2s;
+  }
+.menub a {
+    padding-bottom: 10px;
+	padding-top: 10px; 
+  }
+.menutop a, .menutop a:visited,
+.menub a, .menub a:visited {color: #9d999d;}
+.menutop a.current, .menutop a:hover,
+.menub a.current, .menub a:hover{color: #feb386;}
+.menutop a:before, .menutop a:after,
+.menub a:before, .menub a:after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  top: auto;
+  right: 50%;
+  bottom: -5px;
+  left: 50%;
+  background: #feb386;
+  transition: .8s;
+}
+.menutop a:hover:before, .menutop .current:before,
+.menub a:hover:before, .menub .current:before  {left: 0;}
+.menutop a:hover:after, .menutop .current:after,
+.menub a:hover:after, .menub .current:after {right: 0;}   
+@media (max-width: 550px)
+{
+.menutop {padding-top: 0;}
+.menutop li {display: block;}
+.menutop li:after {content: none;}
+.menutop a {
+  padding: 25px 0 20px; 
+  margin: 0 30px;}
+}
+/* контент */
+.osn {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+.gallery {
+	
+	display: inline-block;
+	width: 80%;
+	padding-bottom: 35px;
+	padding-top: 0px;
+
+	margin-bottom: 0px;
+}
+.box {
+	width: 31.3%;
+	text-align: center;
+	float: left;
+	margin-top: 35px;
+	background-color: #FFFFFF;
+	padding-bottom: 20px;
+	margin-left: 1%;
+	margin-right: 1%;
+    padding-top: 0px;
+	border-bottom: 4px solid #f2cc90;
+	box-shadow: 0 0 3px rgba(0,0,0,0.2);	
+}
+
+.gallery .box h4 {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	color: #f2cc90;
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.gallery .box p {
+	margin: 0;
+	color: #B3B3B3;
+	text-align: left;
+	padding-left: 20px;
+}
+.cartinka {
+	width: 100%;
+	height: auto;
+	max-width: 430px;
+	max-height: 270px;
+	
+}
+.foto{
+	width: 500px;
+	padding-top: 4px;
+	padding-left: 200px;
+	
+}
+.gallery .box .tag {
+	color: #5D5E5D;
+	padding-top: 4px;
+	text-align: left;
+	padding-left: 20px;
+	padding-right: 20px;
+	line-height: 23px;
+}
+@media  (max-width: 950px) {
+.box {
+	width: 90%;
+}
+.menub {width: 30%;} 
+.gallery {width: 70%;}
+}
+@media (min-width: 951px) and (max-width: 1150px) {
+.gallery {width: 75%;}
+.menub{ width: 22%;}
+.box { width: 48%;}
+.between1{display: none;}
+.between {display: block;}
+}
+@media (min-width: 1151px) { .between {display:none;}}
+.cont { margin-top: -215px; width: 90%;
+	margin-left: auto;
+	margin-right: auto;}
+/*Анимация блоков */
+a{
+    text-decoration: none;
+	display: inline-block;
+	
+}
+a div{
+background: #000;  
+overflow: hidden;  }
+a div img{
+    opacity: 1;
+    transition: opacity 124ms linear, transform 124ms linear;  
+	width: 100%;
+	height: auto;
+    display: block; 
+}
+a:hover div img{
+    opacity: 0.4; 
+    transform: scale(1.05); 
+}
+/*подвал*/
+.footer {
+    bottom: 0;
+    width: 100%s;
+	background-color: #3b3b3b; 
+    color: white; 
+    position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 30px;
+	}
+/*нопка вверх*/
+#upbutton {
+    
+    height: 60px;
+    width: 60px;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    z-index: 999;
+    border-radius: 15px;
+    background: #aaa; 
+    opacity: 0.7;
+  }

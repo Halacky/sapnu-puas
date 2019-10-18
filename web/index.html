@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>ISTUBot</title>
+   <link href="styles.css" rel="stylesheet">
+ </head>
+<body>
+  <!--
+  <div class="block11">
+
+    <ul class="menutop">
+    <img class="logo" src='images/logo_1.jpg'>
+  	 <li><a href="index.htm" class="current">Главная</a></li>
+     <li><a href="resume.html"></a></li>
+  	 <li><a href="diction.html"></a></li>
+  	 <li><a href="sitemap.html"></a></li>
+    </ul>
+  </div> -->
+
+ 
+<div class="osn">
+  <div id='hr'></div>
+  <div class="gallery">
+    <div class="box"> <a href="users">
+      <div><img src="images/empty.jpg" alt="Картинка" class="cartinka">
+      </div></a>
+      <a href="users"><h4>Пользователи</h4></a>
+    </div>
+    
+    <div class="box"> <a href="bids">
+      <div><img src="images/empty.jpg" alt="Картинка" class="cartinka">
+      </div></a>
+      <a href="users"><h4>Справки</h4></a>
+    </div>
+    
+    <div class="box"> <a href="events">
+      <div><img src="images/empty.jpg" alt="Картинка" class="cartinka">
+      </div></a>
+      <a href="users"><h4>Список участников мероприятий</h4></a>
+    </div>
+    
+    <div class="box"> <a href="events/add.html">
+      <div><img src="images/empty.jpg" alt="Картинка" class="cartinka">
+      </div></a>
+      <a href="users"><h4>Добавить мероприятие</h4></a>
+    </div>
+  </div> 
+</div>
+
+<div class="footer">  made by sapnu puas </div>
+ <script>
+    var smoothJumpUp = function() {
+        if (document.body.scrollTop>0 || document.documentElement.scrollTop>0) {
+            window.scrollBy(0, -200);
+            setTimeout(smoothJumpUp, 20);
+        }
+    }
+    
+    window.onscroll = function() {
+      var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrolled > 100) {
+        document.getElementById('upbutton').style.display = 'block';
+      } else {
+        document.getElementById('upbutton').style.display = 'none';
+      }
+    }
+</script>
+
+<a id="upbutton" href="#" onclick="smoothJumpUp(); return false;">
+    <img src="images/arr.png" alt="Top" border="none" title="Наверх" width="65px" height="65px">
+</a> 
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+
+* {margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent;line-height: 1.5em;}
+ol, ul {list-style: none;padding: 0;}
+blockquote, q {quotes: none}
+table {border-collapse: collapse;border-spacing: 0}
+* {box-sizing: border-box;}
+[class*=group], [class*=block] {
+    display: block;
+	box-sizing: border-box;
+	float: left;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+}
+[class*=group-90], [class*=block-90] {width: 90%;}
+[class*=group-][class*=-offset-005], [class*=block-][class*=-offset-005] {margin-left: 5%; margin-right: 5%;}
+
+body {
+   font-family: 'Trebuchet MS', Helvetica CY, DejaVu Sans, sans-serif;color: #333; font-size: 14px;
+}
+/* Autor of a responsive method - "Michael Chan" site - "https://github.com/chantastic/table.css" */
+table {
+  border: 2px solid #a0a0a0;
+  width: 100%;
+  margin:0;
+  padding:0;
+  word-wrap: break-word;
+}
+
+table tr {
+  border: 1px solid #a0a0a0;
+  text-align: center;
+}
+
+table th, table td {
+  padding: 10px;
+  width: 12,5%;
+  
+}
+table td {text-align: left;border: 1px solid #a0a0a0;}
+table th {
+  background: #eee;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 1024px) {
+  table {
+    border: 0;
+  }
+  table thead {
+    display: none;
+  }
+  table tr {
+    margin-bottom: 10px;
+    display: block;
+    border-bottom: 2px solid #a0a0a0;
+  }
+  table td {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+	border: 0;
+    border-bottom: 1px dotted #a0a0a0;
+	width: 100%;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+  table td:before {
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+	display: block;
+	padding: 0 8px;
+	background: #eee;
+  }
+}

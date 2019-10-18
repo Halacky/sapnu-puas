@@ -1,0 +1,22 @@
+* { padding: 0; margin: 0; }
+body
+{   
+	background-color: #f2f2f2;
+	font-family: 'Bradley Hand', cursive;
+}
+a{color: #f2cc90;}
+.logo {float: left; margin-left: 18%;max-width: 50px;
+	max-height: 50px;}
+.block { 
+	width: 31.3%;
+	text-align: center;
+	float: left;
+	margin-top: 150px;
+	background-color: #FFFFFF;
+	padding-bottom: 20px;
+	margin-left: 460px;
+	margin-right: auto;
+    padding-top: 0px;
+	border-bottom: 4px solid #f2cc90;
+	box-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
