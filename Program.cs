@@ -171,15 +171,22 @@ namespace TestBot
                                                 },
                                                 new[]
                                                 {
-                                                    new KeyboardButton("Карта"),
-                                                    new KeyboardButton("Расписание") },
+                                                    new KeyboardButton("Мероприятия"),
+                                                    new KeyboardButton("Расписание")
+                                                },
                                                 new[]
                                                 {
                                                     new KeyboardButton("Сессия"),
                                                     new KeyboardButton("Справка")
                                                 },
+                                                new[]
+                                                {
+                                                    new KeyboardButton("Карта"),
+                                                    new KeyboardButton("Статус справок")
+                                                },
                                             },
                             ResizeKeyboard = true
+                        };
                         };
 
                         await bot.SendTextMessageAsync(message.Chat.Id, "Вот тебе кнопки!", replyMarkup: keyboard);
