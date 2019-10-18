@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
@@ -76,12 +76,16 @@ namespace TestBot
         {
             bot.SendPhotoAsync(id, "https://istu-bot.000webhostapp.com/images/map.jpg"); //Берем фотографию с хоста и выводим ее
         }
+
         public static void status(int id)
         {
             string[] array = DataBase.getBidsStatus(id).Result;
-            bot.SendTextMessageAsync(id,array[0]);
-            bot.SendTextMessageAsync(id,array[1]);
+            for (int i = 0; i < array.Length; i++)
+            {
+                bot.SendTextMessageAsync(id, array[i]);
+            }
         }
+
         public static void setka(Telegram.Bot.Types.ChatId id)
         {
             /*
@@ -104,6 +108,10 @@ namespace TestBot
             var betweenWeek = dateFromWeek.Subtract(DateTime.Now);
 
             bot.SendTextMessageAsync(id, $"Дней до начала сессии осталось: {betweenSetka.Days}. До начала зачетной недели: {betweenWeek.Days}");
+        }
+        public static void events(Telegram.Bot.Types.ChatId id) //Обработка команды "Расписание"
+        {
+            bot.SendTextMessageAsync(id, "Посмотри вот тут: https://vk.com/golos_irnitu"); //Говорим что пар нет 
         }
 
         public static void docs(int id, string docsType)
