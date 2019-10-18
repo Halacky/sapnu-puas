@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
@@ -77,7 +77,7 @@ namespace TestBot
             string[] args = { "id=" + userId };
             string phpUrl = "bids/get_status.php";
             string str = await phpResult(phpUrl, args);
-            string[] res = str.Split();
+            string[] res = str.Split('~');
             return res;
         }
         //----------
