@@ -76,7 +76,12 @@ namespace TestBot
         {
             bot.SendPhotoAsync(id, "https://istu-bot.000webhostapp.com/images/map.jpg"); //Берем фотографию с хоста и выводим ее
         }
-
+        public static void status(int id)
+        {
+            string[] array = DataBase.getBidsStatus(id).Result;
+            bot.SendTextMessageAsync(id,array[0]);
+            bot.SendTextMessageAsync(id,array[1]);
+        }
         public static void setka(Telegram.Bot.Types.ChatId id)
         {
             /*
