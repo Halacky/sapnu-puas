@@ -74,8 +74,11 @@ namespace TestBot
         // string[] res = [ "Справка соц защита - готова" , "Справка по месту требования - неготова" ];
         public static async Task<string[]> getBidsStatus(int userId)
         {
-            string phpUrl = "";
-            return null;
+            string[] args = { "id=" + userId };
+            string phpUrl = "bids/get_status.php";
+            string str = await phpResult(phpUrl, args);
+            string[] res = str.Split();
+            return res;
         }
         //----------
         // Мероприятия
